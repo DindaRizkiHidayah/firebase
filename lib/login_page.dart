@@ -8,6 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +22,37 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               FlutterLogo(size: 150),
               SizedBox(height: 50),
+                Column(
+                children: [
+                  TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    controller: emailController,
+                    decoration: InputDecoration(hintText: 'Email'),
+                  ),
+                  TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: InputDecoration(hintText: 'Password'),
+                  ),
+                   RaisedButton(
+                      onPressed: () {
+                        signInEmail(
+                                emailController.text, passwordController.text)
+                            .then((result) {
+                          if (result != null) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return FirstScreen();
+                                },
+                              ),
+                            );
+                          }
+                        });
+                      },
+                      child: Text('Sign in'))
+                ],
+              ),
               _signInButton(),
             ],
           ),
