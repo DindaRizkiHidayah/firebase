@@ -16,7 +16,7 @@ OUTPUT SIGN IN WITH GOOGLE
 
 OUTPUT SIGN IN WITH EMAIL
 
-![email](https://user-images.githubusercontent.com/70737564/116086750-56839280-a6ca-11eb-8496-b08aa3f5e03c.jpeg)
+![email2](https://user-images.githubusercontent.com/70737564/116091252-d875ba80-a6ce-11eb-8e57-116a1a28cd6f.jpeg)
 
 ![output email](https://user-images.githubusercontent.com/70737564/116086760-58e5ec80-a6ca-11eb-9eb6-a7c952bc9709.jpeg)
 
