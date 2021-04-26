@@ -118,31 +118,36 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               actions: [
-                ElevatedButton(
-                  child: Text("Sign In"),
-                  onPressed: () {
-                    String userName = nameController.text;
-                    String userEmail = emailController.text;
-                    String userPassword = passwordController.text;
-                    signInWithEmail(
-                      userName,
-                      userEmail,
-                      userPassword,
-                    ).then(
-                      (result) {
-                        if (result != null) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return EmailScreen();
-                              },
-                            ),
-                          );
-                        }
-                      },
-                    );
-                  },
-                ),
+                RaisedButton(
+                    child: Text("Sign In"),
+                    onPressed: () {
+                      String userName = nameController.text;
+                      String userEmail = emailController.text;
+                      String userPassword = passwordController.text;
+                      signInWithEmail(
+                        userName,
+                        userEmail,
+                        userPassword,
+                      ).then(
+                        (result) {
+                          if (result != null) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return EmailScreen();
+                                },
+                              ),
+                            );
+                          }
+                        },
+                      );
+                    },
+                  ),
+                RaisedButton(
+                  child: Text("Cancel"),
+                  onPressed: (){
+                    Navigator.pop(context);
+                })
               ],
             );
           },
