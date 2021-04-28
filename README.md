@@ -6,7 +6,7 @@ NIM : 1931710092
 
 OUTPUT FIRST SCREEN
 
-![main (1)](https://user-images.githubusercontent.com/70737564/116086718-4bc8fd80-a6ca-11eb-8277-17f744a9bced.jpeg)
+![home (3)](https://user-images.githubusercontent.com/70737564/116352773-e7b84d80-a81f-11eb-8eea-534d6db66a60.jpeg)
 
 OUTPUT SIGN IN WITH GOOGLE
 
@@ -16,7 +16,6 @@ OUTPUT SIGN IN WITH GOOGLE
 
 OUTPUT SIGN IN WITH EMAIL
 
-![email2](https://user-images.githubusercontent.com/70737564/116091252-d875ba80-a6ce-11eb-8e57-116a1a28cd6f.jpeg)
 
 ![output email](https://user-images.githubusercontent.com/70737564/116086760-58e5ec80-a6ca-11eb-9eb6-a7c952bc9709.jpeg)
 
