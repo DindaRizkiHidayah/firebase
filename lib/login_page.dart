@@ -9,7 +9,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   @override
@@ -24,13 +23,60 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               FlutterLogo(size: 150),
               SizedBox(height: 50),
-              _signInButton(),
               _signInButtonEmail(),
+              _signInButton(),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Widget _signInButtonEmail() {
+    return Container(
+        margin: EdgeInsets.all(10),
+        width: 300,
+        child: Column(children: [
+          TextFormField(
+            controller: emailController,
+            decoration: InputDecoration(
+              labelText: 'Email',
+              icon: Icon(Icons.email),
+            ),
+            onChanged: (value) {},
+          ),
+          TextFormField(
+            controller: passwordController,
+            decoration: InputDecoration(
+              labelText: 'Password',
+              icon: Icon(Icons.lock),
+            ),
+            onChanged: (value) {},
+          ),
+          RaisedButton(
+            child: Text("Sign In"),
+            onPressed: () {
+              String userEmail = emailController.text;
+              String userPassword = passwordController.text;
+              signInWithEmail(
+                userEmail,
+                userPassword,
+              ).then(
+                (result) {
+                  if (result != null) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return EmailScreen();
+                        },
+                      ),
+                    );
+                  }
+                },
+              );
+            },
+          ),
+        ]));
   }
 
   Widget _signInButton() {
@@ -69,111 +115,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _signInButtonEmail() {
-    return OutlinedButton(
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              scrollable: true,
-              title: Text('Login Email'),
-              content: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Form(
-                  child: Column(
-                    children: <Widget>[
-                      TextFormField(
-                        controller: nameController,
-                        decoration: InputDecoration(
-                          labelText: 'Name',
-                          icon: Icon(Icons.people),
-                        ),
-                        onChanged: (value) {},
-                      ),
-                      TextFormField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                          icon: Icon(Icons.email),
-                        ),
-                        onChanged: (value) {},
-                      ),
-                      TextFormField(
-                        controller: passwordController,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          icon: Icon(Icons.lock),
-                        ),
-                        onChanged: (value) {},
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              actions: [
-                RaisedButton(
-                    child: Text("Sign In"),
-                    onPressed: () {
-                      String userName = nameController.text;
-                      String userEmail = emailController.text;
-                      String userPassword = passwordController.text;
-                      signInWithEmail(
-                        userName,
-                        userEmail,
-                        userPassword,
-                      ).then(
-                        (result) {
-                          if (result != null) {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return EmailScreen();
-                                },
-                              ),
-                            );
-                          }
-                        },
-                      );
-                    },
-                  ),
-                RaisedButton(
-                  child: Text("Cancel"),
-                  onPressed: (){
-                    Navigator.pop(context);
-                })
-              ],
-            );
-          },
-        );
-      },
-      style: OutlinedButton.styleFrom(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        side: BorderSide(color: Colors.blue),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // Image(image: AssetImage("assets/email_logo.png"), height: 35.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Text(
-                'Sign in with Email',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.blue,
-                ),
-              ),
-            ),
           ],
         ),
       ),

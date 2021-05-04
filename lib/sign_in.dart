@@ -47,7 +47,7 @@ Future<void> signOutGoogle() async {
 }
 
 Future<User> signInWithEmail(
-    String userName, String userEmail, String userPassword) async {
+    String userEmail, String userPassword) async {
   await Firebase.initializeApp();
   User user;
   try {
@@ -58,7 +58,6 @@ Future<User> signInWithEmail(
     user = userCredential.user;
 
     if (user != null) {
-      name = userName;
       email = userEmail;
     }
   } on FirebaseAuthException catch (e) {
