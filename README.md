@@ -8,7 +8,7 @@ OUTPUT FIRST SCREEN
 
 ![home (3)](https://user-images.githubusercontent.com/70737564/116352773-e7b84d80-a81f-11eb-8eea-534d6db66a60.jpeg)
 
-![output email](https://user-images.githubusercontent.com/70737564/116086760-58e5ec80-a6ca-11eb-9eb6-a7c952bc9709.jpeg)
+![WhatsApp Image 2021-04-27 at 14 04 27](https://user-images.githubusercontent.com/70737564/116967596-df0ebe00-acdc-11eb-9388-04de6fdf72fc.jpeg)
 
 OUTPUT SIGN IN WITH GOOGLE
 
